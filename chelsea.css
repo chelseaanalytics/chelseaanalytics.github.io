@@ -1,0 +1,79 @@
+.topnav{
+  position: static;
+  top: 0;
+  left: 0;
+  font-family: 'helvetica', sans-serif;
+  font-size: 18px;
+  height: 5px;
+  color: white;
+  background-color: #064276;
+  margin: auto;
+  text-align: center;
+  vertical-align: bottom;
+  padding: 0px;
+}
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  color: white;
+  background-color: #064276;
+  z-index: -1;
+}
+
+.Canvas {
+  position: absolute;
+  z-index: -1
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:auto;
+}
+
+.About {
+  position: relative;
+  top: 100;
+  left: 100;
+  z-index: -2;
+  border-radius: 0%;
+  transform: rotate(0deg);
+  padding: 0px;
+  font-family: 'helvetica', sans-serif;
+  color: white;
+  font-size: 20px;
+  text-transform: capitalize;
+  text-align: center;
+  -webkit-text-stroke: 0.2px #B1CCE4;
+
+}
+
+
+.footer {
+  position: static;
+  left: 10;
+  bottom: 0;
+  height: 10px;
+  line-height: 10px;
+  background-color: #064276;
+  font-family: 'helvetica', sans-serif;
+  font-size: 12px;
+  color: white;
+  vertical-align: topx;
+  text-align: center;
+}
+
+.footer2 {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+a:link{
+  color: white;
+  text-decoration: none;
+}
+
+a:visited{
+  color: white;
+  text-decoration: none;
+}
