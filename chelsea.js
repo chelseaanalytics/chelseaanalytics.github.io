@@ -45,29 +45,29 @@ function draw() {
 
  //Draw random fills
   a = Math.random()*rectWidth;
-  //a = Math.round(a/size)*size;
+  a = Math.round(a/size)*size;
   b = Math.random()*rectHeight;
-  //b = Math.round(b/size)*size;
+  b = Math.round(b/size)*size;
 
-  //if((a+size)<=rectWidth && (b+size)<=rectHeight){
+  if((a+size)<=rectWidth && (b+size)<=rectHeight){
     gl.fillStyle = '#064276';  //#073156
     gl.fillRect(a, b, size, size);
-    gl.fillStyle = '#064276';  //#073156
+    gl.fillStyle = '#0E4778';  //#073156
     gl.fillRect(a-size, b-size, size, size);
     gl.fillStyle = '#073156';  //#073156 #CBE3F8
     gl.fillRect(a, b-size, size, size);
     //gl.fillStyle = '#CBE3F8';  //#073156 #CBE3F8
     //gl.fillRect(a-size, b, size, size);
-    //gl.strokeStyle = "grey";
-    //gl.lineWidth = 1;
-    //gl.rect(a, b, size, size);
-    //gl.stroke();
+    gl.strokeStyle = "#064276";
+    gl.lineWidth = 1;
+    gl.rect(a, b, size, size);
+    gl.stroke();
     gl.save
-  //}
-  //else {
-  //  a = 0;
-  //  b = 0;
-  //}
+  }
+  else {
+    a = 0;
+    b = 0;
+  }
 
 
 
