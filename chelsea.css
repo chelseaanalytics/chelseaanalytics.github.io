@@ -13,17 +13,8 @@
 
 .links{
   position: relative;
-  display:inline-block;
   margin: auto;
-  float: center;
-  vertical-align: bottom;
-}
-
-.about{
-  position: relative;
-  display:inline-block;
-  margin: auto;
-  float: right;
+  text-align: center;
   vertical-align: bottom;
 }
 
@@ -35,12 +26,19 @@ body {
   z-index: -1;
 }
 
+.about{
+  position: relative;
+  display:inline-block;
+  margin: auto;
+  float: right;
+  vertical-align: bottom;
+}
 
 .footer {
-  z-index: -1;
-  position: relative;
+  z-index: 1;
+  position: static;
   left: 10;
-  bottom: 0;
+  bottom: 20;
   height: 10px;
   line-height: 10px;
   background-color: #064276;
