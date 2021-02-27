@@ -37,43 +37,10 @@ if (COUNT<5000) {
   COUNT = COUNT+1;
   }
 else {
-  //Print text again so it's on top of animation
-  ctx1.fillStyle = "White";
-  ctx1.font = '72px Helvetica';
-  ctx1.textAlign = 'center';
-  ctx1.fillText('Chelsea Analytics', RECTWIDTH/2, RECTHEIGHT/2);
   window.clearInterval(animator);
 }
 
-// Draw text
-//ctx1.fillStyle = "white";
-//if (width > 800) {
-//  ctx1.font = '72px Helvetica';
-//}
-//else {
-//  ctx1.font = '36px Helvetica';
-//}
-//ctx1.textAlign = 'center';
-//ctx1.fillText('Chelsea Analytics', width/2, height/2);
-
 }
-
-function Text() {
-//ctx1.clearRect(0, 0, RECTWIDTH, RECTHEIGHT);
-
-// if (WIDTH > 800) {
-//   ctx1.font = '72px Helvetica';
-// }
-// else {
-//   ctx1.font = '36px Helvetica';
-// }
-ctx2.fillStyle = "White";
-ctx2.font = '72px Helvetica';
-ctx2.textAlign = 'center';
-ctx2.fillText('Chelsea Analytics', RECTWIDTH/2, RECTHEIGHT/2);
-
-}
-
 
 // *******************   Main program   ******************* //
 
@@ -88,18 +55,27 @@ ctx1 = Animation.getContext('2d');
 
 Text = document.getElementById("Text");
 ctx2 = Text.getContext('2d' , );
-ctx2.canvas.width = 1200;
-ctx2.canvas.height = 800;
+
+var a = window.innerWidth;
+var b = window.innerHeight;
+
+ctx2.canvas.width = a;
+ctx2.canvas.height = b;
 ctx2.canvas.left = 500;
 
-var width = ctx1.canvas.width = 1200;
-var height = ctx1.canvas.height = 800;
+var width = ctx1.canvas.width = a;
+var height = ctx1.canvas.height = b;
 
 var width2 = ctx2.canvas.width;
 var height2 = ctx2.canvas.height;
 
 ctx2.fillStyle = "White";
-ctx2.font = '72px Helvetica';
+if (width>800) {
+  ctx2.font = '72px Helvetica';
+}
+else {
+  ctx2.font = '48px Helvetica';
+}
 ctx2.textAlign = 'center';
 ctx2.fillText('Chelsea Analytics', width2/2, height2/2);
 
@@ -120,5 +96,4 @@ for (x=0;x<RECTWIDTH;x+=size) {
  }
 }
 
-//Text();
 var animator = window.setInterval(Animate, 0.25);
