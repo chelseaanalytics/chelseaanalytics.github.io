@@ -18,6 +18,10 @@
   vertical-align: bottom;
 }
 
+a:hover{
+  font-weight: bold;
+}
+
 body {
   width: 100%;
   height: 100%;
