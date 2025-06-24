@@ -1,68 +1,169 @@
-.topnav{
-  position: static;
-  width: 100%;
-  top: 0;
-  left: 0;
-  font-family: 'helvetica', sans-serif;
-  font-size: 12px;
-  height: 10px;
-  color: white;
-  background-color: #064276;
-  margin-left: 10px;
-  margin-right: 20px;
-}
-
-.links{
-  font-family: 'Montserrat', sans-serif;
-  width: 100%;
-  margin: auto;
-  text-align: center;
-  vertical-align: bottom;
-}
-
+/* General body styles */
 body {
   width: 100%;
   height: 100%;
   color: white;
-  background-color: #064276;
-  z-index: -1;
-}
-
-.about{
+  background-color: #064276; /* Deep blue background */
+  margin: 0;
+  padding: 0;
   position: relative;
-  display:inline-block;
-  margin: auto;
-  float: right;
-  vertical-align: bottom;
 }
 
+/* Top Navigation */
+.topnav {
+  width: 100%;
+  font-family: 'helvetica', sans-serif;
+  font-size: 12px;
+  height: 30px;
+  color: white;
+  background-color: transparent;
+}
+
+.links {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 30px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* H E C A R T E S Link in the Header */
+.hecartes-link {
+  font-family: 'Montserrat', sans-serif;
+  color: #A3C6E6;  /* Light blue */
+  text-decoration: none; /* Remove underline */
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effect for H E C A R T E S link */
+.hecartes-link:hover {
+  color: #6B98C7; /* Medium blue on hover */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow effect */
+  font-weight: bold;
+}
+
+/* Full Screen Canvas Container */
+.canvases {
+  position: relative;
+  width: 100%;
+  height: 100vh;  /* Full height of the viewport */
+  overflow: hidden;
+}
+
+/* Main Title (Chelsea Analytics) */
+.main-title {
+  position: absolute;
+  top: 40%;         /* Vertical center */
+  left: 50%;        /* Horizontal center */
+  transform: translate(-50%, -50%);  /* Corrects the offset to truly center */
+  color: white;     /* Text color */
+  font-family: 'Montserrat', sans-serif; /* Font */
+  font-weight: 600;
+  font-size: 72px;   /* Font size */
+  letter-spacing: 2px;
+  z-index: 2;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
+}
+
+/* Subtitle Text */
+.sub-title {
+  position: absolute;
+  top: 55%;         /* Position just below the main title */
+  left: 50%;        /* Horizontal center */
+  transform: translateX(-50%);  /* Horizontally center */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;   /* Adjusted font size */
+  color: white;      /* White text for high contrast */
+  margin-top: 20px;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+  text-align: center;
+  max-width: 800px;  /* Ensures the text doesn't stretch too wide */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for better readability */
+}
+
+/* Individual Parts of the Subtitle with readable colors */
+.part1 {
+  color: #A3C6E6;  /* Light Blue (Readability over dark background) */
+}
+
+.part2 {
+  color: #B2D4F0;  /* Medium Light Blue */
+}
+
+.part3 {
+  color: #6B98C7;  /* Medium Blue */
+}
+
+.part4 {
+  color: #4688B0;  /* Dark Blue */
+}
+
+.part5 {
+  color: #1E5A87;  /* Deep Blue (main color) */
+}
+
+/* Footer Styles */
 .footer {
   z-index: 1;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 50px; /* Increased height for the footer */
-  line-height: 50px; /* Vertically center the text */
-  background-color: #064276;
-  font-family: 'helvetica', sans-serif;
+  height: 50px; 
+  background-color: transparent;
+  font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   color: white;
   text-align: center;
   width: 100%;
-  padding: 10px 0; /* Add padding to give space */
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
 }
 
+/* Footer Links */
+.footer a {
+  font-family: 'Montserrat', sans-serif;
+  color: #A3C6E6;  /* Light Blue for footer links */
+  text-decoration: none;
+  padding: 0 15px;
+  font-size: 14px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effect for footer links */
+.footer a:hover {
+  color: #6B98C7;  /* Medium Blue hover color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow effect */
+  font-weight: bold;
+}
+
+/* Footer Text (Copy) */
+.copy {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: #4688B0; /* Dark Blue for footer text */
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase; /* Make text uppercase */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Styling for Links in Footer and Header */
 a {
-    font-family: 'Montserrat', sans-serif;
-    color: white; /* Ensure the links are white */
-    text-decoration: none; /* Remove underline */
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  text-decoration: none;
 }
 
 a:hover {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 a:visited {
-    color: white; /* Ensure visited links are also white */
+  color: white;
 }
+
