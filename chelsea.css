@@ -53,18 +53,14 @@ body {
 
 a {
     font-family: 'Montserrat', sans-serif;
+    color: white; /* Ensure the links are white */
+    text-decoration: none; /* Remove underline */
 }
 
-a:hover{
-  font-weight: bold;
+a:hover {
+    font-weight: bold;
 }
 
-a:link{
-  color: white;
-  text-decoration: none;
-}
-
-a:visited{
-  color: white;
-  text-decoration: none;
+a:visited {
+    color: white; /* Ensure visited links are also white */
 }
