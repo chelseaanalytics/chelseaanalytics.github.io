@@ -12,14 +12,11 @@
 }
 
 .links{
+  font-family: 'Montserrat', sans-serif;
   position: relative;
   margin: auto;
   text-align: center;
   vertical-align: bottom;
-}
-
-a:hover{
-  font-weight: bold;
 }
 
 body {
@@ -52,6 +49,14 @@ body {
   color: white;
   text-align: center;
   width: 100%;
+}
+
+a {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a:hover{
+  font-weight: bold;
 }
 
 a:link{
