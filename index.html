@@ -15,13 +15,13 @@
   <div class="topnav">
 
     <div class="links">
-      <div>Investments&nbsp;&nbsp;&nbsp;&nbsp;Asset Management&nbsp;&nbsp;&nbsp;&nbsp;Advisory Services</div>
+      <a href="https://hecartes.com/about" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;H E C A R T E S</a>
     </div>
 
   </div>
 
   <div class="canvases" style="width: 100%; height: 100%">
-    <p align="center">
+    <p style="align-items: center;">
       <canvas id="Text" style="z-index: 1; position:absolute; top: 500; left: 500"></canvas>
       <canvas id="Animation" style="z-index: 0; position:relative"></canvas>
       <script src="chelsea.js"></script>
@@ -33,7 +33,12 @@
     <a href="https://soundcloud.com/creativemediocrity/tracks" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;Mixes</a>
     <a href="https://visualmediocrity.tumblr.com/" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;Mood</a>
     <a href="mailto: david@chelseaanalytics.com">&nbsp;&nbsp;&nbsp;&nbsp;Contact</a>
-    <p>&nbsp;</p><p>&copyChelsea Analytics LLC 2021. All rights reserved</p>
+    <p>&nbsp;</p>
+    <p>&copy; Chelsea Analytics LLC <span id="current-year"></span>. All rights reserved</p>
+    <script>
+      const currentYear = new Date().getFullYear();
+      document.getElementById("current-year").textContent = currentYear;
+    </script>
   </div>
 
 </body>
