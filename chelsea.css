@@ -11,13 +11,16 @@
   margin-right: 20px;
 }
 
-/* .links{
-  font-family: 'Montserrat', sans-serif;
+.links{
   position: relative;
   margin: auto;
   text-align: center;
   vertical-align: bottom;
-} */
+}
+
+a:hover{
+  font-weight: bold;
+}
 
 body {
   width: 100%;
@@ -38,30 +41,25 @@ body {
 .footer {
   z-index: 1;
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 50px; /* Increased height for the footer */
-  line-height: 50px; /* Vertically center the text */
+  left: 10;
+  right: 10;
+  bottom: 20;
+  height: 10px;
+  line-height: 10px;
   background-color: #064276;
   font-family: 'helvetica', sans-serif;
   font-size: 12px;
   color: white;
   text-align: center;
   width: 100%;
-  padding: 10px 0; /* Add padding to give space */
 }
 
-a {
-    font-family: 'Montserrat', sans-serif;
-    color: white; /* Ensure the links are white */
-    text-decoration: none; /* Remove underline */
+a:link{
+  color: white;
+  text-decoration: none;
 }
 
-a:hover {
-    font-weight: bold;
-}
-
-a:visited {
-    color: white; /* Ensure visited links are also white */
+a:visited{
+  color: white;
+  text-decoration: none;
 }
