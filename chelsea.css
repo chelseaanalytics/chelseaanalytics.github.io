@@ -57,7 +57,7 @@ body {
 /* Main Title (Chelsea Analytics) */
 .main-title {
   position: absolute;
-  top: 40%;         /* Vertical center */
+  top: 30%;         /* Adjusted position for mobile */
   left: 50%;        /* Horizontal center */
   transform: translate(-50%, -50%);  /* Corrects the offset to truly center */
   color: white;     /* Text color */
@@ -67,12 +67,13 @@ body {
   letter-spacing: 2px;
   z-index: 2;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
+  text-align: center; /* Ensures text is centered */
 }
 
 /* Subtitle Text */
 .sub-title {
   position: absolute;
-  top: 55%;         /* Position just below the main title */
+  top: 45%;         /* Adjusted position for mobile */
   left: 50%;        /* Horizontal center */
   transform: translateX(-50%);  /* Horizontally center */
   font-family: 'Roboto', sans-serif;
@@ -166,4 +167,55 @@ a:hover {
 a:visited {
   color: white;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 48px;  /* Reduce the size of the main title on mobile */
+    top: 30%;         /* Move the main title higher up on the screen */
+  }
+
+  .sub-title {
+    font-size: 16px;  /* Adjust the subtitle size for smaller screens */
+    max-width: 100%;  /* Allow the subtitle to take full width */
+    top: 40%;         /* Move the subtitle higher up on the screen */
+  }
+
+  .hecartes-link {
+    font-size: 14px; /* Smaller text size for "H E C A R T E S" link on mobile */
+  }
+
+  .footer {
+    padding: 15px 0; /* Increased padding for mobile footer */
+  }
+
+  .footer a {
+    font-size: 12px; /* Smaller footer link text */
+  }
+
+  .copy {
+    font-size: 10px; /* Smaller footer text */
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 36px;  /* Further reduce size on very small screens */
+    top: 30%;         /* Adjust position higher */
+  }
+
+  .sub-title {
+    font-size: 14px;  /* Smaller subtitle font on very small screens */
+    top: 40%;         /* Move subtitle up */
+  }
+
+  .hecartes-link {
+    font-size: 12px; /* Make "H E C A R T E S" link smaller on very small screens */
+  }
+
+  .footer {
+    padding: 20px 0; /* Extra padding for small screens */
+  }
+}
+
 
