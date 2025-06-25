@@ -12,30 +12,31 @@
 
 <body>
 
-  <div class="topnav">
-    <div class="links">
-      <a href="https://hecartes.com/about" class="hecartes-link" target="_blank">H E C A R T E S</a>
-    </div>
-  </div>
-
   <div class="canvases">
-      <p class="main-title">Chelsea Analytics</p>
-      <p class="sub-title">
-          <span class="part1">Specializing in algorithm design,</span> 
-          <span class="part2">full-stack development,</span> 
-          <span class="part3">and advanced AI/machine learning,</span> 
-          <span class="part4">with a focus on financial markets</span> 
-          <span class="part5">and other data-driven industries.</span>
-      </p>
+
+      <div class="container">
+        
+        <p class="main-title">Chelsea Analytics</p>
+        <p class="sub-title">
+            <span class="part1">Specializing in algorithm design,</span> 
+            <span class="part2">full-stack development,</span> 
+            <span class="part3">and advanced AI/machine learning,</span> 
+            <span class="part4">with a focus on financial markets</span> 
+            <span class="part5">and other data-driven industries.</span>
+        </p>
+        <div class="links2">
+          <a href="https://hecartes.com/about" class="hecartes-link" target="_blank">hecartes.com</a>
+          <a href="https://medium.com/@davidccblue" target="_blank">writing</a>
+          <a href="https://soundcloud.com/creativemediocrity/tracks" target="_blank">mixes</a>
+          <a href="https://visualmediocrity.tumblr.com/" target="_blank">mood</a>
+          <a href="mailto: david@chelseaanalytics.com">contact</a>
+        </div>
+      </div>
       <canvas id="Animation" style="z-index: 0;"></canvas>
       <script src="chelsea.js"></script>
   </div>
 
   <div class="footer">
-    <a href="https://medium.com/@davidccblue" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;Writing</a>
-    <a href="https://soundcloud.com/creativemediocrity/tracks" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;Mixes</a>
-    <a href="https://visualmediocrity.tumblr.com/" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;Mood</a>
-    <a href="mailto: david@chelseaanalytics.com">&nbsp;&nbsp;&nbsp;&nbsp;Contact</a>
     <p class="copy">&copy; Chelsea Analytics LLC <span id="current-year"></span>. All rights reserved.</p>
     <script>
       const currentYear = new Date().getFullYear();

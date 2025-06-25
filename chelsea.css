@@ -9,58 +9,25 @@ body {
   position: relative;
 }
 
-/* Top Navigation */
-.topnav {
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  font-family: 'helvetica', sans-serif;
-  font-size: 12px;
-  height: 30px;
-  color: white;
+  height: 100;
+}
+
+.outline {
+  margin-top: 20%;
+  max-width: 800px;
   background-color: transparent;
 }
 
-.links {
-  font-family: 'Montserrat', sans-serif;
-  line-height: 30px;
-  width: 100%;
-  margin: auto;
-  text-align: center;
-}
-
-/* H E C A R T E S Link in the Header */
-.hecartes-link {
-  font-family: 'Montserrat', sans-serif;
-  color: #A3C6E6;  /* Light blue */
-  text-decoration: none; /* Remove underline */
-  font-size: 18px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 5px 10px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-/* Hover effect for H E C A R T E S link */
-.hecartes-link:hover {
-  color: #6B98C7; /* Medium blue on hover */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow effect */
-  font-weight: bold;
-}
-
-/* Full Screen Canvas Container */
-.canvases {
-  position: relative;
-  width: 100%;
-  height: 100vh;  /* Full height of the viewport */
-  overflow: hidden;
-}
-
-/* Main Title (Chelsea Analytics) */
 .main-title {
-  position: absolute;
-  top: 30%;         /* Adjusted position for mobile */
-  left: 50%;        /* Horizontal center */
-  transform: translate(-50%, -50%);  /* Corrects the offset to truly center */
-  color: white;     /* Text color */
+  margin-top: 25%;
+  margin-bottom: 0;
+  /* display: grid; */
+  color: white;
   font-family: 'Montserrat', sans-serif; /* Font */
   font-weight: 600;
   font-size: 72px;   /* Font size */
@@ -70,25 +37,61 @@ body {
   text-align: center; /* Ensures text is centered */
 }
 
-/* Subtitle Text */
 .sub-title {
-  position: absolute;
-  top: 45%;         /* Adjusted position for mobile */
-  left: 50%;        /* Horizontal center */
-  transform: translateX(-50%);  /* Horizontally center */
+  max-width: 800px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 20px;   /* Adjusted font size */
   color: white;      /* White text for high contrast */
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
   line-height: 1.7;
   letter-spacing: 0.5px;
   text-align: center;
-  max-width: 800px;  /* Ensures the text doesn't stretch too wide */
+  /* max-width: 800px; */
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for better readability */
 }
 
-/* Individual Parts of the Subtitle with readable colors */
+.canvases {
+  position: relative;
+  width: 100%;
+  height: 100vh;  
+  overflow: hidden;
+}
+
+.links2 {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center; /* Ensure the links are centered horizontally */
+  gap: 20px;        /* Space between links on desktop */
+  white-space: nowrap; /* Prevent wrapping */
+  overflow-x: auto;  /* Allow horizontal scrolling if needed */
+  width: 100%;      
+  padding: 10px;   
+}
+
+.links2 a {
+  font-family: 'Montserrat', sans-serif;
+  color: #A3C6E6;  /* Light blue */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px;  /* Set the links text size to match subtitle size */
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effect for links */
+.links2 a:hover {
+  color: #6B98C7; /* Medium blue on hover */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow effect */
+  font-weight: bold;
+}
+
 .part1 {
   color: #A3C6E6;  /* Light Blue (Readability over dark background) */
 }
@@ -109,7 +112,6 @@ body {
   color: #1E5A87;  /* Deep Blue (main color) */
 }
 
-/* Footer Styles */
 .footer {
   z-index: 1;
   height: 50px; 
@@ -124,7 +126,6 @@ body {
   bottom: 0;
 }
 
-/* Footer Links */
 .footer a {
   font-family: 'Montserrat', sans-serif;
   color: #A3C6E6;  /* Light Blue for footer links */
@@ -134,14 +135,13 @@ body {
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Hover effect for footer links */
+
 .footer a:hover {
   color: #6B98C7;  /* Medium Blue hover color */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow effect */
   font-weight: bold;
 }
 
-/* Footer Text (Copy) */
 .copy {
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
@@ -156,8 +156,10 @@ body {
 /* Styling for Links in Footer and Header */
 a {
   font-family: 'Montserrat', sans-serif;
-  color: white;
+  color: #A3C6E6;
   text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 
 a:hover {
@@ -165,57 +167,73 @@ a:hover {
 }
 
 a:visited {
-  color: white;
+  color: #A3C6E6;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+
   .main-title {
-    font-size: 48px;  /* Reduce the size of the main title on mobile */
-    top: 30%;         /* Move the main title higher up on the screen */
+    margin-top: 50%;
+    font-size: 48px;
   }
 
   .sub-title {
-    font-size: 16px;  /* Adjust the subtitle size for smaller screens */
-    max-width: 100%;  /* Allow the subtitle to take full width */
-    top: 40%;         /* Move the subtitle higher up on the screen */
+    font-size: 16px; 
+    max-width: 100%;  
+  }
+
+  .links2 {
+    width: 100%;      
+    gap: 10px;        
+  }
+
+  .links2 a {
+    font-size: 14px;  
+    display: inline-block; 
+    padding: 5px 10px;
   }
 
   .hecartes-link {
-    font-size: 14px; /* Smaller text size for "H E C A R T E S" link on mobile */
+    font-size: 14px;  
   }
 
   .footer {
-    padding: 15px 0; /* Increased padding for mobile footer */
+    padding: 15px 0; 
   }
 
   .footer a {
-    font-size: 12px; /* Smaller footer link text */
+    font-size: 12px; 
   }
 
   .copy {
-    font-size: 10px; /* Smaller footer text */
+    font-size: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .main-title {
-    font-size: 36px;  /* Further reduce size on very small screens */
-    top: 30%;         /* Adjust position higher */
+    font-size: 36px;  
+    margin-top: 50%;       
   }
 
   .sub-title {
-    font-size: 14px;  /* Smaller subtitle font on very small screens */
-    top: 40%;         /* Move subtitle up */
+    font-size: 14px;  
+  }
+
+
+  .links2 a {
+    font-size: 12px;  
+    display: inline-block;  
+    width: auto;    
+    padding: 10px 0;
   }
 
   .hecartes-link {
-    font-size: 12px; /* Make "H E C A R T E S" link smaller on very small screens */
+    font-size: 12px; 
   }
 
   .footer {
-    padding: 20px 0; /* Extra padding for small screens */
+    padding: 20px 0;
   }
 }
-
-
