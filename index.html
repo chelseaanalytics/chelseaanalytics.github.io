@@ -33,17 +33,20 @@
           <a href="mailto: david@chelseaanalytics.com">contact</a>
         </div>
       </div>
+
+      <div class="footer">
+        <p class="copy">&copy; Chelsea Analytics LLC <span id="current-year"></span>. All rights reserved.</p>
+        <script>
+          const currentYear = new Date().getFullYear();
+          document.getElementById("current-year").textContent = currentYear;
+        </script>
+      </div>
+      
       <canvas id="Animation" style="z-index: 0;"></canvas>
       <script src="chelsea.js"></script>
   </div>
 
-  <div class="footer">
-    <p class="copy">&copy; Chelsea Analytics LLC <span id="current-year"></span>. All rights reserved.</p>
-    <script>
-      const currentYear = new Date().getFullYear();
-      document.getElementById("current-year").textContent = currentYear;
-    </script>
-  </div>
+
 
 </body>
 
