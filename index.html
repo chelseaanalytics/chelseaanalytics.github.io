@@ -1,54 +1,162 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Chelsea Analytics LLC</title>
-    <meta name="viewport" content="width=device-width , initial-scale=1">
-    <meta name="description" content="Algorithm design, full-stack development, and AI/machine learning, focusing on financial markets and other data-driven industries.">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon2.png" type="image/png">
-    <link rel="stylesheet" href="chelsea.css">
+  <meta charset="utf-8">
+  <title>Chelsea Analytics LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="chelsea.css">
+  <link rel="icon" href="/favicon2.png" type="image/png">
 </head>
 
 <body>
+  <!-- TOP NAV -->
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="/" class="brand"><span>Chelsea</span><span class="period">.</span></a>
 
+      <!-- Desktop nav -->
+      <nav class="nav-links nav-links-desktop" aria-label="Primary">
+        <a href="https://www.linkedin.com/in/bluedavid/" target="_blank" rel="noopener">About</a>
+        <a href="mailto:david@chelseaanalytics.com">Contact</a>
+        <a href="https://medium.com/@davidccblue" target="_blank" rel="noopener">Research</a>
+        <a href="https://hecartes.com/" target="_blank" rel="noopener">hecartes.com</a>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        type="button"
+      >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav class="nav-links nav-links-mobile" id="mobileMenu" aria-label="Mobile">
+      <a href="https://www.linkedin.com/in/bluedavid/" target="_blank" rel="noopener">About</a>
+      <a href="mailto:david@chelseaanalytics.com">Contact</a>
+      <a href="https://medium.com/@davidccblue" target="_blank" rel="noopener">Research</a>
+      <a href="https://hecartes.com/about" target="_blank" rel="noopener">hecartes.com</a>
+    </nav>
+  </header>
+
+  <!-- PAGE -->
   <div class="canvases">
+    <!-- Canvas background -->
+    <canvas id="Animation"></canvas>
 
-      <div class="container">
+    <!-- Foreground -->
+    <main class="container">
 
-        <p class="main-title">Chelsea Analytics</p>
-        <p class="sub-title">
-            <span class="part1">Specializing in algorithm design,</span> 
-            <span class="part2">full-stack development,</span> 
-            <span class="part3">and advanced AI/machine learning,</span> 
-            <span class="part4">with a focus on financial markets</span> 
-            <span class="part5">and other data-driven industries.</span>
-        </p>
-        <div class="links2">
-          <a href="https://hecartes.com/about" class="hecartes-link" target="_blank">hecartes.com</a>
-          <a href="https://medium.com/@davidccblue" target="_blank">writing</a>
-          <a href="https://soundcloud.com/creativemediocrity/tracks" target="_blank">mixes</a>
-          <a href="https://visualmediocrity.tumblr.com/" target="_blank">mood</a>
-          <a href="mailto: david@chelseaanalytics.com">contact</a>
-        </div>
+      <div class="sub-title">
+        <span>Solutions for decision-makers</span>
+        <span>in complex, data-intensive industries</span>
       </div>
 
-      <div class="footer">
+      <section class="services-cards">
+
+        <article class="service-card">
+          <h3 class="service-title">Corporate Strategy</h3>
+          <div class="service-image">
+            <img src="/images/office.jpg" alt="Corporate strategy">
+          </div>
+          <ul class="service-list">
+            <li>Fundraising</li>
+            <li>Growth strategy</li>
+            <li>M&amp;A analysis and due diligence</li>
+            <li>Business optimization</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <h3 class="service-title">CFO Services</h3>
+          <div class="service-image">
+            <img src="/images/data2.jpg" alt="Data analysis and automation">
+          </div>
+          <ul class="service-list">
+            <li>Workflow optimization</li>
+            <li>AI / Automation</li>
+            <li>Controller oversight</li>
+            <li>FP&A</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <h3 class="service-title">Stock Market Research and Analysis</h3>
+          <div class="service-image">
+            <img src="/images/markets.jpg" alt="Tech-enabled hardware">
+          </div>
+          <ul class="service-list">
+            <li>Strategy research + development</li>
+            <li>Backtesting + walk forward analysis</li>
+            <li>Statistical analysis</li>
+            <li>Deployment</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <h3 class="service-title">Full Stack Development</h3>
+          <div class="service-image">
+            <img src="/images/computer.jpg" alt="Tech-enabled hardware">
+          </div>
+          <ul class="service-list">
+            <li>Product ideation + technical design</li>
+            <li>Rapid prototyping + MVP builds</li>
+            <li>System hardening + scale-up</li>
+            <li>Deployment+ monitoring </li>
+          </ul>
+        </article>
+
+      </section>
+
+      <!-- Footer with bottom nav -->
+      <footer class="footer">
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="https://www.linkedin.com/in/bluedavid/">About</a>
+          <a href="mailto:david@chelseaanalytics.com" target="_blank" rel="noopener">Contact</a>
+          <a href="https://medium.com/@davidccblue" target="_blank" rel="noopener">Research</a>
+          <a href="https://hecartes.com/" target="_blank" rel="noopener">hecartes.com</a>
+        </nav>
+
         <p class="copy">&copy; Chelsea Analytics LLC <span id="current-year"></span>. All rights reserved.</p>
-        <script>
-          const currentYear = new Date().getFullYear();
-          document.getElementById("current-year").textContent = currentYear;
-        </script>
-      </div>
-      
-      <canvas id="Animation" style="z-index: 0;"></canvas>
-      <script src="chelsea.js"></script>
+      </footer>
+    </main>
   </div>
 
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
 
+    const navToggle = document.getElementById("navToggle");
 
+    function setMenu(open) {
+      document.body.classList.toggle("menu-open", open);
+      navToggle.setAttribute("aria-expanded", String(open));
+      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+
+    navToggle.addEventListener("click", () => {
+      setMenu(!document.body.classList.contains("menu-open"));
+    });
+
+    // Close on Escape
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setMenu(false);
+    });
+
+    // Close if you resize back to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 900) setMenu(false);
+    });
+  </script>
+
+  <script src="chelsea.js"></script>
 </body>
-
 </html>

@@ -1,239 +1,405 @@
-/* General body styles */
-body {
+/* =========================
+   CHELSEA ANALYTICS — FULL CSS (SINGLE FILE)
+   - Top nav fixed to top
+   - Footer/bottom nav fixed to bottom (full-bleed left/right/bottom)
+   - Canvas fixed fullscreen behind
+   - Cards layout LOCKED:
+       Desktop (>=900px): 2 columns (2x2 when you add 4th card)
+       Mobile (<900px):   1 column (4x1)
+   - Perfect 2-dash hamburger via ::before/::after
+   ========================= */
+
+/* ----- RESET / BASE ----- */
+html, body {
   width: 100%;
   height: 100%;
-  color: white;
-  background-color: #064276; /* Deep blue background */
   margin: 0;
   padding: 0;
-  position: relative;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100;
+* { box-sizing: border-box; }
+
+:root {
+  --bg: #000000;
+  --white: #FFFFFF;
+  --line: #141414;
+
+  --link: #A3C6E6;
+  --link-hover: #6B98C7;
+
+  --footer: #4688B0;
+  --pink: #F3CFC6;
+
+  --card-bg: #0A0A0A;
+  --img-bg: #050505;
+
+  --body-blue: #D7E7F6;
+  --title-blue: #4287f5;
+
+  --shadow: rgba(0,0,0,0.6);
+
+  --nav-h: 72px;
+  --footer-h: 92px; /* enough for footer links + copyright */
 }
 
-.outline {
-  margin-top: 20%;
-  max-width: 800px;
-  background-color: transparent;
-}
-
-.main-title {
-  margin-top: 25%;
-  margin-bottom: 0;
-  /* display: grid; */
-  color: white;
-  font-family: 'Montserrat', sans-serif; /* Font */
-  font-weight: 600;
-  font-size: 72px;   /* Font size */
-  letter-spacing: 2px;
-  z-index: 2;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
-  text-align: center; /* Ensures text is centered */
-}
-
-.sub-title {
-  max-width: 800px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 20px;   /* Adjusted font size */
-  color: white;      /* White text for high contrast */
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  line-height: 1.7;
-  letter-spacing: 0.5px;
-  text-align: center;
-  /* max-width: 800px; */
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for better readability */
-}
-
+/* ----- BACKGROUND CANVAS WRAPPER ----- */
 .canvases {
   position: relative;
   width: 100%;
-  height: 100vh;  
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+/* Canvas fills viewport behind content */
+#Animation {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+}
+
+/* =========================
+   TOP NAV (FIXED)
+   ========================= */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-h);
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--line);
+  z-index: 20;
+}
+
+.nav-inner {
+  max-width: 1800px;
+  height: var(--nav-h);
+  margin: 0 auto;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+.brand {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+}
+
+.period {
+  color: var(--pink);
+  font-size: 1.35em;
+  line-height: 0;
+  position: relative;
+  top: -0.05em;
+}
+
+/* Shared nav link styling */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: var(--link);
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  padding: 6px 2px;
+  transition: color 0.18s ease, font-weight 0.18s ease;
+}
+
+.nav-links a:hover {
+  color: var(--link-hover);
+  font-weight: 600;
+}
+
+/* Desktop nav default */
+.nav-links-desktop { display: flex; }
+
+/* =========================
+   HAMBURGER (PERFECT 2 DASH)
+   ========================= */
+.nav-toggle {
+  display: none; /* shown on mobile only */
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 12px;
+
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.nav-toggle:hover { background-color: rgba(255,255,255,0.05); }
+.nav-toggle:active { transform: scale(0.97); }
+.nav-toggle:focus-visible {
+  outline: 2px solid rgba(243, 207, 198, 0.45);
+  outline-offset: 3px;
+}
+
+/* Ignore the 3 <span class="bar">; we draw with pseudo elements */
+.nav-toggle .bar { display: none; }
+
+.nav-toggle::before,
+.nav-toggle::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.92);
+  transition: transform 0.22s ease, background-color 0.18s ease;
+}
+
+.nav-toggle::before { transform: translateY(-5px); }
+.nav-toggle::after  { transform: translateY( 5px); }
+
+body.menu-open .nav-toggle::before {
+  transform: rotate(45deg);
+  background: rgba(243,207,198,0.95);
+}
+
+body.menu-open .nav-toggle::after {
+  transform: rotate(-45deg);
+  background: rgba(243,207,198,0.95);
+}
+
+/* =========================
+   MOBILE MENU (DROPDOWN)
+   ========================= */
+.nav-links-mobile {
+  display: none;
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  z-index: 19;
+
+  flex-direction: column;
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-links-mobile a {
+  padding: 14px 32px;
+  font-size: 15px;
+  border-top: 1px solid rgba(20,20,20,0.75);
+}
+
+body.menu-open .nav-links-mobile { display: flex; }
+
+/* =========================
+   FOREGROUND CONTENT
+   IMPORTANT: pad for fixed header + fixed footer
+   ========================= */
+.container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+
+  padding-top: calc(var(--nav-h) + 68px);
+  padding-left: 32px;
+  padding-right: 32px;
+
+  /* leave room for fixed footer */
+  padding-bottom: calc(var(--footer-h) + 40px);
+
+  text-align: center;
+}
+
+/* (kept if you add back subtitle copy) */
+.sub-title {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+   line-height: 1.25;
+  letter-spacing: 0.5px;
+  color: var(--white);
+  /* text-shadow: 2px 2px 6px #000000; */
+}
+
+.sub-title span {
+  display: block;
+}
+
+/* =========================
+   SERVICE CARDS (LOCKED LAYOUT)
+   Desktop (>=900px): 2 columns
+   Mobile (<900px):   1 column
+   ========================= */
+.services-cards {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  margin: 40px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 520px)); /* LOCKED 2 columns */
+  gap: 36px;
+
+  justify-content: center;
+  align-items: start;
+
+  text-align: left;
+}
+
+.service-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 12px 36px var(--shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-title {
+  margin: 0 0 16px;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-align: center;
+  color: var(--title-blue);
+}
+
+.service-image {
+  width: 100%;
+  height: 220px;
+  margin: 0 0 20px;
+  background-color: var(--img-bg);
+  border: 1px solid var(--line);
+  border-radius: 0;
   overflow: hidden;
 }
 
-.links2 {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: center;
-  justify-content: center; /* Ensure the links are centered horizontally */
-  gap: 20px;        /* Space between links on desktop */
-  white-space: nowrap; /* Prevent wrapping */
-  overflow-x: auto;  /* Allow horizontal scrolling if needed */
-  width: 100%;      
-  padding: 10px;   
-}
-
-.links2 a {
-  font-family: 'Montserrat', sans-serif;
-  color: #A3C6E6;  /* Light blue */
-  text-decoration: none; /* Remove underline */
-  font-size: 16px;  /* Set the links text size to match subtitle size */
-  letter-spacing: 1px;
-  padding: 5px 10px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-/* Hover effect for links */
-.links2 a:hover {
-  color: #6B98C7; /* Medium blue on hover */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow effect */
-  font-weight: bold;
-}
-
-.part1 {
-  color: #A3C6E6;  /* Light Blue (Readability over dark background) */
-}
-
-.part2 {
-  color: #B2D4F0;  /* Medium Light Blue */
-}
-
-.part3 {
-  color: #6B98C7;  /* Medium Blue */
-}
-
-.part4 {
-  color: #4688B0;  /* Dark Blue */
-}
-
-.part5 {
-  color: #1E5A87;  /* Deep Blue (main color) */
-}
-
-.footer {
-  z-index: 1;
-  height: 50px; 
-  background-color: transparent;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  color: white;
-  text-align: center;
+.service-image img {
   width: 100%;
-  padding: 10px 0;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.service-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--body-blue);
+}
+
+.service-list li { margin-bottom: 10px; }
+.service-list li:last-child { margin-bottom: 0; }
+
+.service-list li::marker { color: var(--title-blue); }
+
+/* =========================
+   FOOTER (FIXED BOTTOM, FULL-BLEED)
+   ========================= */
+.footer {
   position: absolute;
+  left: 0;
+  right: 0;
   bottom: 0;
+
+  z-index: 18; /* under top nav (20), above canvas (0) */
+  background-color: var(--bg);
+  border-top: 1px solid var(--line);
+
+  padding: 14px 0 12px;
 }
 
-.footer a {
-  font-family: 'Montserrat', sans-serif;
-  color: #A3C6E6;  /* Light Blue for footer links */
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin: 0 0 8px;
+  padding: 0 16px;
+}
+
+.footer-nav a {
+  color: var(--link);
+  font-size: 13px;
+  letter-spacing: 0.4px;
   text-decoration: none;
-  padding: 0 15px;
-  font-size: 14px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  padding: 6px 2px;
+  transition: color 0.18s ease, font-weight 0.18s ease;
 }
 
-
-.footer a:hover {
-  color: #6B98C7;  /* Medium Blue hover color */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow effect */
-  font-weight: bold;
+.footer-nav a:hover {
+  color: var(--link-hover);
+  font-weight: 600;
 }
 
 .copy {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  color: #4688B0; /* Dark Blue for footer text */
+  margin: 0;
   text-align: center;
-  margin-top: 10px;
+  font-size: 12px;
   letter-spacing: 1px;
-  text-transform: uppercase; /* Make text uppercase */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  text-transform: uppercase;
+  color: var(--footer);
 }
 
-/* Styling for Links in Footer and Header */
-a {
-  font-family: 'Montserrat', sans-serif;
-  color: #A3C6E6;
-  text-decoration: none;
-  font-size: 18px;
-  letter-spacing: 1px;
-}
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 900px) {
+  .nav-inner { padding: 0 16px; }
 
-a:hover {
-  font-weight: bold;
-}
+  .nav-links-desktop { display: none; }
+  .nav-toggle { display: inline-flex; }
 
-a:visited {
-  color: #A3C6E6;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-
-  .main-title {
-    margin-top: 50%;
-    font-size: 48px;
+  .container {
+    padding-top: calc(var(--nav-h) + 48px);
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
-  .sub-title {
-    font-size: 16px; 
-    max-width: 100%;  
+  /* LOCKED mobile layout: 1 column only */
+  .services-cards {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+    gap: 24px;
   }
 
-  .links2 {
-    width: 100%;      
-    gap: 10px;        
-  }
+  .service-image { height: 180px; }
 
-  .links2 a {
-    font-size: 14px;  
-    display: inline-block; 
-    padding: 5px 10px;
-  }
-
-  .hecartes-link {
-    font-size: 14px;  
-  }
-
-  .footer {
-    padding: 15px 0; 
-  }
-
-  .footer a {
-    font-size: 12px; 
-  }
-
-  .copy {
-    font-size: 10px;
-  }
+  .nav-links-mobile a { padding: 14px 16px; }
 }
 
 @media (max-width: 480px) {
-  .main-title {
-    font-size: 36px;  
-    margin-top: 50%;       
-  }
-
-  .sub-title {
-    font-size: 14px;  
-  }
-
-
-  .links2 a {
-    font-size: 12px;  
-    display: inline-block;  
-    width: auto;    
-    padding: 10px 0;
-  }
-
-  .hecartes-link {
-    font-size: 12px; 
-  }
-
-  .footer {
-    padding: 20px 0;
-  }
+  /* keep footer readable */
+  .footer-nav { gap: 14px; }
+  .footer-nav a { font-size: 12px; }
+  .copy { font-size: 11px; }
 }
