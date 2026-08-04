@@ -136,10 +136,11 @@ a {
   margin: 0 0 0.85rem;
   font-family: Syne, sans-serif;
   font-weight: 700;
-  font-size: clamp(2.4rem, 5.5vw, 4.25rem);
+  font-size: clamp(3rem, 6.5vw, 5rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
-  max-width: 12ch;
+  width: max-content;
+  max-width: 100%;
   opacity: 0;
   transform: translateY(28px);
   animation: rise 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
@@ -150,7 +151,7 @@ a {
   max-width: 22ch;
   font-family: Syne, sans-serif;
   font-weight: 600;
-  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  font-size: clamp(1.35rem, 2.6vw, 1.9rem);
   line-height: 1.25;
   letter-spacing: -0.025em;
   opacity: 0;
@@ -400,14 +401,13 @@ a {
   }
 
   .hero-brand {
-    font-size: clamp(2.1rem, 9vw, 3rem);
-    max-width: 11ch;
+    font-size: clamp(2.6rem, 11vw, 3.4rem);
     margin-bottom: 0.65rem;
   }
 
   .hero-line {
     max-width: 22ch;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
   }
 
   .spectrum {
