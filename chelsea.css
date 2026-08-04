@@ -389,7 +389,7 @@ a {
 
   .nav-inner {
     padding: 0 20px;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .hero-shell {
@@ -486,19 +486,30 @@ a {
   }
 
   .spectrum-points li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.4rem;
     width: 100%;
-    padding-top: 0.95rem;
+    padding-top: 0;
     padding-left: 0;
     font-size: 0.75rem;
-    text-align: center;
+    text-align: left;
   }
 
   .spectrum-points li::before {
-    top: 0;
-    left: 50%;
+    position: static;
+    top: auto;
+    left: auto;
     width: 5px;
     height: 5px;
-    transform: translateX(-50%);
+    margin-top: 0.35em;
+    flex-shrink: 0;
+    transform: none;
+  }
+
+  .spectrum-points li span {
+    text-align: left;
   }
 
   .footer {
