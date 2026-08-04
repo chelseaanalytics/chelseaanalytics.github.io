@@ -413,8 +413,8 @@ a {
   .spectrum {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "front back"
-      "front-list back-list";
+      "back front"
+      "back-list front-list";
     column-gap: 20px;
     row-gap: 0.75rem;
   }
